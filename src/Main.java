@@ -2,24 +2,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        //Реализация чисел Фибоначии через цикл for с пользовательским вводом.
-        int maxNumber;
-        int previousNumber = 0;
-        int nextNumber = 1;
+        //Рекурсивное вычисление чисел Фибоначчи
 
-        System.out.println("Введите колличество чисел в Фибоначчи:");
-        Scanner scanner = new Scanner(System.in);
-        maxNumber = scanner.nextInt();
-        System.out.print("Фибоначчи для "+maxNumber+" чисел:");
+        System.out.println(fibonacciValue(10));
 
-        for (int i = 1; i <= maxNumber; ++i){
-
-            System.out.print(previousNumber+" ");
-
-            int sum = previousNumber + nextNumber;
-            previousNumber = nextNumber;
-            nextNumber = sum;
+    }
+    public static int fibonacciValue(int num) {
+        if (num == 0) {
+            return 0;
+        } else if (num == 1) {
+            return 1;
+        } else {
+            return fibonacciValue(num - 1) + fibonacciValue(num - 2);
         }
-
     }
 }
